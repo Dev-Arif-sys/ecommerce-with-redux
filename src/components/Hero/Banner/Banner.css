@@ -1,0 +1,24 @@
+.banner{
+    position: relative;
+    margin-bottom: 10px;
+}
+.banner img{
+    border-radius: 10px;
+}
+.banner-text{
+    position: absolute;
+    z-index: 20;
+    top: 15%;
+    left: 10px;
+}
+
+.banner-text h5{
+    font-size: 1.5rem;
+    width: 80%;
+    color: rgb(16, 59, 99);
+}
+.banner-text a{
+    text-decoration: none;
+    color: rgb(143, 235, 37);
+    font-weight: 600;
+}
