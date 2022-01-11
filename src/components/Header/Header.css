@@ -1,0 +1,16 @@
+.hr{
+    max-width: 1132px;
+    margin: 10px auto;
+    width: 90%;
+}
+
+.cross-btn{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 300;
+    color: rgb(13, 247, 33);
+}
+.cross-btn .fas{
+    font-size: 1.5rem;
+}

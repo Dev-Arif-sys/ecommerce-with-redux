@@ -1,0 +1,89 @@
+.myCard{
+    width: 250px;
+    margin: 0 auto;
+    background-color: #f2f0f7;
+   
+    cursor: pointer;
+   border: .5px solid lightgray;
+   border-radius: 10px;
+}
+.myCard:hover{
+box-shadow: 0 5px 10px 0 rgba(8, 8, 8, 0.3);
+}
+
+.card-img{
+    position: relative;
+    overflow: hidden;
+   
+}
+.card-img img{
+    width: 250px;
+    height: 150px;
+    transition: .7s transform;
+  
+}
+
+.layer{
+    position: absolute;
+  
+    width: 240px;
+    margin-left: 5px;
+    height: 30px;
+    bottom: -10px;
+    filter: blur(5px);
+}
+.card-info{
+    position: relative;
+    padding: 0 10px 10px 10px;
+}
+.name{
+    font-weight: 600;
+}
+.price{
+    color: #85b90b;
+    font-size: 1.2rem;
+}
+.card-icon{
+    position: relative;
+    top: -15px;
+    
+}
+.card-icon .fas{
+    transition: .2s transform;
+}
+.card-icon .fas:hover{
+    transform: scale(1.1);
+}
+
+.card-icon p{
+    color: #85b90b;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:1080px) {
+    .myCard{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .myCard{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .myCard{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .myCard{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+

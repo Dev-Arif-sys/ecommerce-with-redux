@@ -15,7 +15,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Carousel = () => {
     return (
-        <div className='w-75'>
+        <div className='carousel'>
             <Swiper spaceBetween={30} centeredSlides={true} autoplay={{
                 "delay": 2500,
                 "disableOnInteraction": false
@@ -23,7 +23,7 @@ const Carousel = () => {
                 "clickable": true
             }} navigation={true} className="mySwiper">
                 <SwiperSlide>
-                    <div className='d-flex p-4  align-items-center'>
+                    <div className='d-flex p-4   align-items-center'>
                         <div className='carousel-info'>
                             <h1>Your new Aristocracy</h1>
                             <h6>under reasonable prices</h6>
@@ -33,7 +33,7 @@ const Carousel = () => {
                             </div>
                             <button className='buying-btn'>Start buying</button>
                         </div>
-                        <img src={img1} />
+                        <img className='carousel-img' src={img1} />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -47,7 +47,7 @@ const Carousel = () => {
                   </div>
                   <button className='buying-btn'>Start buying</button>
               </div>
-                        <img src={img2} />
+                        <img className='carousel-img' src={img2} />
                     </div></SwiperSlide><SwiperSlide>
                     <div className='d-flex p-4 align-items-center'>
                         <div className='carousel-info'>
@@ -59,7 +59,7 @@ const Carousel = () => {
                             </div>
                             <button className='buying-btn'>Start buying</button>
                         </div>
-                        <img src={img3} />
+                        <img className='carousel-img' src={img3} />
 
                     </div>
                 </SwiperSlide>

@@ -1,14 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import BottomHeader from './components/Header/BottomHeader/BottomHeader';
 import{BrowserRouter,Routes,Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home/Home';
+import Header from './components/Header/Header';
+
 
 function App() {
   return (
     <BrowserRouter>
-    <BottomHeader></BottomHeader>
+    <Header></Header>
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
     </Routes>

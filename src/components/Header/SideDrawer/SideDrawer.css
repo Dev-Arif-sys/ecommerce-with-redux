@@ -1,0 +1,16 @@
+.side-drawer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: rgb(240, 236, 231);
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: .4s transform ease-out;
+}
+
+.activeDrawer{
+    transform: translateX(0%);
+}
+

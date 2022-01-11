@@ -1,0 +1,102 @@
+.mid-header-container{
+   max-width: 1232px;
+   margin: 0 auto; 
+   padding-top: 10px;
+   width: 90%;
+}
+
+.logo{
+  font-weight: 800;
+  font-family:cursive;
+  color: #041941;
+}
+
+.hamburger{
+  display: none;
+}
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 500px;
+    border: 3px solid #10f81c;
+    border-right: none;
+    padding: 20px 0;
+    height: 20px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    color: #1a2014;
+
+  }
+  
+  .searchTerm:focus{
+    color: #222b1b;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 46px;
+     border: none;
+    background: #10f81c;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .cart .fas{
+      font-size: 1.5rem;
+  }
+  .wish .far{
+      font-size: 1.5rem;
+      margin-right: 20px;
+  }
+
+  .cart{
+    position: relative;
+  }
+
+  .cartNo{
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: yellowgreen;
+    width: 15px;
+    height: 15;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 50%;
+
+  }
+
+  @media only  screen and (max-width:900px) {
+      .search{
+       width: 400px;
+      }
+  }
+
+  @media only  screen and (max-width:768px) {
+    .hamburger{
+      display: inline-block;
+    }
+    .search{
+     width: 300px;
+    }
+    
+    .searchTerm{
+      padding: 15px 0 ;
+    }
+    .searchButton{
+      height: 36px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+  .search{
+    display: none;
+  }
+}

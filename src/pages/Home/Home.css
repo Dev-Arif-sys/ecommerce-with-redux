@@ -1,4 +1,11 @@
 .home{
-    max-width: 1132px;
+    max-width: 1232px;
+    width: 90%;
     margin: 0 auto;
+}
+
+@media only screen and (max-width:320px) {
+    .home{
+        width: 100%;
+    }
 }

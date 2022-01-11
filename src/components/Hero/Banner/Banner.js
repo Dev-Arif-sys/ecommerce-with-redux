@@ -6,7 +6,7 @@ import img3 from '../../../media/hero-banner-img/3.jpg';
 
 const Banner = () => {
     return (
-        <div className='w-25 ms-2'>
+        <div className='banner-container me-5'>
             <div className='banner' >
                 <img src={img1}/>
                 <div className='banner-text'>

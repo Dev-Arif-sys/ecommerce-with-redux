@@ -1,3 +1,6 @@
+.carousel{
+    width: 75%;
+}
 .carousel-info h1{
     font-size: 3.5rem;
     font-weight: 400;
@@ -30,3 +33,148 @@
     border-radius: 10px;
     margin-top: 30px;
 }
+
+
+
+@media only screen and (max-width:1080px) {
+    .carousel-img{
+        width: 350px;
+    }
+    .carousel-info h1{
+        font-size: 2.3rem;
+        
+    }
+    
+    .carousel-info h6{
+       
+       font-size: 1rem;
+       
+    }
+    
+    .price h1{
+       
+        font-size: 2rem;
+       
+    }
+    .price p{
+        font-size: .7rem;
+    }
+}
+
+
+
+
+@media only screen and (max-width:880px) {
+    .carousel-img{
+        width: 300px;
+    }
+    
+}
+
+
+@media only screen and (max-width:768px) {
+    .carousel-img{
+        width: 260px;
+    }
+    
+}
+
+@media only screen and (max-width:767px) {
+    .carousel{
+        width: 100%;
+    }
+    .carousel-img{
+        width: 200px;
+       
+    }
+    
+}
+
+
+@media only screen and (max-width:480px) {
+    .carousel{
+        width: 100%;
+    }
+    .carousel-img{
+        width: 150px;
+       
+    }
+
+    .carousel-info h1{
+        font-size: 1.2rem;
+        
+    }
+    
+    .carousel-info h6{
+       
+       font-size: .9rem;
+       
+    }
+    
+    .price h1{
+       
+        font-size: 1.2rem;
+       
+    }
+    .price p{
+        font-size: .7rem;
+    }
+
+    .buying-btn{
+        border:none;
+        padding: 5px 10px;
+        color: rgb(36, 28, 26);
+        background-color: rgb(158, 233, 20);
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+    
+}
+
+
+@media only screen and (max-width:480px) {
+    .carousel{
+        width: 100%;
+    }
+    .carousel-img{
+        width: 150px;
+       
+    }
+
+    .carousel-info h1{
+        font-size: 1rem;
+        
+    }
+    
+    .carousel-info h6{
+       
+       font-size: .7rem;
+       
+    }
+    
+    .price h1{
+       
+        font-size: 1rem;
+       
+    }
+    .price p{
+        font-size: .5rem;
+    }
+
+    .buying-btn{
+        border:none;
+        padding: 2px 4px;
+        color: rgb(36, 28, 26);
+        background-color: rgb(158, 233, 20);
+        font-weight: 5;
+        text-transform: uppercase;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+    
+}
+
+
+
