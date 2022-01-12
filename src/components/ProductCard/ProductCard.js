@@ -24,7 +24,7 @@ const ProductCard = ({product}) => {
           </div>
          <div >
              
-             <p className='name'>{name}</p>
+             <p className='name'>{name.slice(0,15)}...</p>
          </div>
          <div>
              <h6 className="price">${price}</h6>

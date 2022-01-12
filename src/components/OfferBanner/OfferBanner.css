@@ -1,0 +1,71 @@
+.offer-banner-container{
+    display: flex;
+    gap: 10px;
+}
+.offer-banner {
+ position: relative;
+ 
+ margin: 0 auto;
+}
+
+.offer-banner .offer-banner-text{
+    position: absolute;
+    top: 20%;
+    left: 20px;
+}
+.offer-banner img{
+    width: 100%;
+    height: auto;
+}
+
+.banner-heading{
+    width: 70%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgb(7, 7, 56);
+}
+
+.banner-btn{
+    padding: 5px 10px;
+    border: none;
+    background-color: yellow;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width:980px){
+     .offer-banner-container{
+         flex-direction: column;
+     }
+     .banner-heading{
+         font-size: 1.4rem;
+     }
+     .offer-banner-text{
+         line-height: 10px;
+     }
+}
+
+@media only screen and (max-width:768px){
+    .offer-banner-container{
+        flex-direction: column;
+    }
+    .banner-heading{
+        font-size: 1.2rem;
+    }
+    .offer-banner-text{
+        line-height: 7px;
+        top: 5%;
+    }
+}
+
+@media only screen and (max-width:480px){
+    .offer-banner-container{
+        flex-direction: column;
+    }
+    .banner-heading{
+        font-size: 1rem;
+    }
+    .offer-banner-text{
+        line-height: 7px;
+        top: 5%;
+    }
+}
