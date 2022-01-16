@@ -7,8 +7,12 @@ import './Home.css'
 import img1 from '../../media/offer-banner/1.jpg'
 import img2 from '../../media/offer-banner/2.jpg'
 import ProductCategory from '../../components/ProductCategory/ProductCategory';
+import { signInWithGoogle } from '../../Redux/Actions/AuthAction';
+import { useDispatch } from 'react-redux';
 
 const Home = () => {
+     
+    const dispatch=useDispatch()
     
     return (
         <div className='home'>
@@ -16,6 +20,7 @@ const Home = () => {
             <Products></Products>
             <hr className='my-4'/>
             <OfferBanner></OfferBanner>
+            <button onClick={()=>dispatch(signInWithGoogle())} >signInWithGoogle</button>
             <ProductCategory></ProductCategory>
             
         </div>
