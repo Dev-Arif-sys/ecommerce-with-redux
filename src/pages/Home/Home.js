@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 
 const Home = () => {
      
-    const dispatch=useDispatch()
+   
     
     return (
         <div className='home'>
@@ -20,7 +20,7 @@ const Home = () => {
             <Products></Products>
             <hr className='my-4'/>
             <OfferBanner></OfferBanner>
-            <button onClick={()=>dispatch(signInWithGoogle())} >signInWithGoogle</button>
+            <button  >signInWithGoogle</button>
             <ProductCategory></ProductCategory>
             
         </div>

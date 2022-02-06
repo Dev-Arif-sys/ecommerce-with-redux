@@ -1,0 +1,84 @@
+.signin{
+ 
+    width: 100%;
+    margin: 0 auto;
+   
+}
+
+.signin-container{
+    width: 100%;
+    margin: 30px auto;
+    height: 70vh;
+    
+}
+.left,.right{
+  width: 50%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signin-input{
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: none;
+    background-color: rgb(227, 252, 252);
+ 
+}
+.submit-btn{
+    width: 100px;
+    border: none;
+    padding: 7px 10px;
+    background-color: #10f81c;
+    font-weight: bold;
+    color: white;
+    border-radius: 30px;
+}
+.submit-btn:hover{
+    background-color: #15e920;
+}
+.right{
+    background-color: #b5e211;
+    padding: 20px;
+    color: white;
+}
+
+.createAccBtn{
+    cursor: pointer;
+}
+.google-icon, .github-icon{
+  background-color: #10f81c;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:1080px) {
+    .signin-input{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .right{
+        display: none;
+    }
+    .left{
+        width: 100%;
+    }
+    .signin-input{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .signin{
+        width: 100%;
+    }
+}

@@ -55,6 +55,15 @@
       font-size: 1.5rem;
       margin-right: 20px;
   }
+  .header-icon{
+    cursor: pointer;
+   
+  }
+
+  .signInBtn{
+    text-decoration: none;
+    color: black;
+  }
 
   .cart{
     position: relative;
