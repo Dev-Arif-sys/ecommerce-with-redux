@@ -10,6 +10,8 @@ import { userState } from './Redux/Actions/AuthAction';
 import Footer from './components/Footer/Footer';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ReviewProduct from './pages/ReviewProduct/ReviewProduct';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
@@ -27,7 +29,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/signin' element={<Signin></Signin>}></Route>
-      <Route path='/products/:id' element={<ReviewProduct></ReviewProduct>}></Route>
+      <Route path='/cart' element={<Cart></Cart>}></Route>
+      <Route path='/products/:id' element={<PrivateRoute/>}>
+        <Route path='/products/:id' element={<ReviewProduct></ReviewProduct>}  />
+      </Route>
     </Routes>
     <Footer></Footer>
     </BrowserRouter>

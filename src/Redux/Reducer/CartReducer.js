@@ -1,6 +1,10 @@
 import * as actionTypes from '../ActionTypes.js/CartActionType'
 
- export const CartReducer=(state={productCart:[]},action)=>{
+
+const InitialCart= localStorage.getItem('cart')!=='undefined' ? JSON.parse(localStorage.getItem('cart') ):[]
+
+
+ export const CartReducer=(state={productCart:InitialCart},action)=>{
     switch(action.type){
       case actionTypes.ADD_TO_CART:{
           const item=action.payload
@@ -19,6 +23,14 @@ import * as actionTypes from '../ActionTypes.js/CartActionType'
           }
 
       }
+      case actionTypes.REMOVE_FROM_CART:{
+          const restItem=state.productCart.filter(product=>product._id !== action.payload)
+          return{
+            ...state,
+            productCart:restItem
+        }
+      }
+      
       default: return state
     }
 }

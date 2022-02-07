@@ -122,6 +122,7 @@ export const signInWithEmailPass=(email,pass)=> dispatch=>{
 }
 
 export const userState=()=>dispatch=>{
+      dispatch(signInStart())
     onAuthStateChanged(auth, (user) => {
         if (user) {
          dispatch(signInSuccess(user))

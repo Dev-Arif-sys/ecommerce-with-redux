@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ProductSlider from '../ProductSlider/ProductSlider';
 import './ProductDetail.css'
+import { addToCart } from '../../Redux/Actions/CartAction';
 
 const ProductDetail = () => {
     const [product, setProduct] = useState({})
     const productData=useSelector(state=> state.product.products)
+    const dispatch=useDispatch()
+    const [categorizedData,setCatogorizedData]=useState([])
+    const [quantity,setQuantity]=useState(1)
     
     const { id } = useParams()
    
@@ -23,7 +27,17 @@ const ProductDetail = () => {
 
     var { name, price, category, stock, img, _id, seller, star, feature } = product
 
-    const categorizedData=productData.filter(product=>product.category==category)
+    console.log(productData)
+    useEffect(()=>{
+       fetch(`http://localhost:5000/productbycategory?category=${category}`)
+       .then(res=>res.json())
+       .then(data=>{
+           setCatogorizedData(data)
+       })
+    },[category])
+    console.log(quantity)
+
+    
     
 
 
@@ -43,21 +57,21 @@ const ProductDetail = () => {
                    
 
                     <div className="qty-box">
-                        <span className="dec qty-item" >–</span>
-                        <span className="qty qty-item"> 0</span>
-                        <span className="inc qty-item">+</span>
+                        <span onClick={()=>{ if(quantity>1){setQuantity(quantity-1 )} }} className="dec qty-item" >–</span>
+                        <span className="qty qty-item"> {quantity}</span>
+                        <span onClick={()=>setQuantity(quantity+1)} className="inc qty-item">+</span>
                     </div>
 
-                    <button className='gen-btn'>Add To Cart</button>
+                    <button onClick={()=>dispatch(addToCart(_id,quantity))} className='gen-btn'>Add To Cart</button>
                    
 
                 </div>
 
 
             </div>
-            <div className='mt-5'>
-                <h3 className='section-title'>You may also Like</h3>
-            <ProductSlider products={categorizedData}></ProductSlider>
+            <div className='mt-5 pb-5'>
+                <h3 className='section-title mb-4'>You may also Like</h3>
+            <ProductSlider  products={categorizedData}></ProductSlider>
             </div>
 
         </div>

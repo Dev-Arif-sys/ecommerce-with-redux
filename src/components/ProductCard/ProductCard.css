@@ -85,5 +85,12 @@ box-shadow: 0 5px 10px 0 rgba(8, 8, 8, 0.3);
         width: 90%;
         margin: 0 auto;
     }
+    .card-img{
+        text-align: center;
+    }
+    .card-img img{
+        width: 100%;
+        text-align: center;
+    }
 }
 

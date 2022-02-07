@@ -9,9 +9,11 @@ import img2 from '../../media/offer-banner/2.jpg'
 import ProductCategory from '../../components/ProductCategory/ProductCategory';
 import { signInWithGoogle } from '../../Redux/Actions/AuthAction';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import SignModal from '../../components/SigninModal/SignModal';
 
 const Home = () => {
-     
+  
    
     
     return (
@@ -22,7 +24,7 @@ const Home = () => {
             <OfferBanner></OfferBanner>
            
             <ProductCategory></ProductCategory>
-            
+          
         </div>
     );
 };

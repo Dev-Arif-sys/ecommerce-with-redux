@@ -1,7 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../../Redux/Actions/CartAction';
+import SignModal from '../SigninModal/SignModal';
 
 import './ProductCard.css'
 
@@ -9,15 +10,25 @@ const ProductCard = ({product}) => {
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const {name,img,price,star,_id}=product
+    const [modalShow, setModalShow] = React.useState(false);
+    const UserData=useSelector(state=>state.user)
+    const {loading, userInfo}=UserData
+   
 
     const handleCardClick=(id)=>{
-        navigate(`products/${id}`)
+        if(! userInfo?.email){
+             setModalShow(true)
+        }else{
+            navigate(`products/${id}`)
+        }
+    
+        
     }
     return (
         <div>
-        <div onClick={()=> handleCardClick(_id)} className="myCard">
+        <div  className="myCard">
          <div className="card-img">
-             <div>
+             <div onClick={()=> handleCardClick(_id)}>
              <img src={img} alt="" />
              </div>
           
@@ -42,6 +53,10 @@ const ProductCard = ({product}) => {
          </div>
          
         </div>
+
+        <SignModal show={modalShow}
+                    onHide={() => setModalShow(false)}
+                 ></SignModal>
         </div>
     );
 };

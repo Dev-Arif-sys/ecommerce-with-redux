@@ -46,7 +46,7 @@ const Signin = () => {
                   <input className='submit-btn' type="submit"  />
 
                   <p className='mt-5 createAccBtn'  onClick={()=>{SetRegister(!IsRegister)}}> {
-                      IsRegister? <span>Old  User? Log in</span> : <span>New User? Create account</span> 
+                      IsRegister? <span >Old  User? Log in</span> : <span>New User? Create account</span> 
                   }
                       </p>
     </form>
