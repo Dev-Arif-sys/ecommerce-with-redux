@@ -7,6 +7,9 @@ import Header from './components/Header/Header';
 import Signin from './pages/Signin/Signin';
 import { useDispatch } from 'react-redux';
 import { userState } from './Redux/Actions/AuthAction';
+import Footer from './components/Footer/Footer';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import ReviewProduct from './pages/ReviewProduct/ReviewProduct';
 
 
 function App() {
@@ -24,7 +27,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/signin' element={<Signin></Signin>}></Route>
+      <Route path='/products/:id' element={<ReviewProduct></ReviewProduct>}></Route>
     </Routes>
+    <Footer></Footer>
     </BrowserRouter>
   );
 }

@@ -1,17 +1,26 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../../Redux/Actions/CartAction';
 
 import './ProductCard.css'
 
 const ProductCard = ({product}) => {
     const dispatch=useDispatch()
+    const navigate=useNavigate()
     const {name,img,price,star,_id}=product
+
+    const handleCardClick=(id)=>{
+        navigate(`products/${id}`)
+    }
     return (
         <div>
-        <div className="myCard">
+        <div onClick={()=> handleCardClick(_id)} className="myCard">
          <div className="card-img">
-          <img src={img} alt="" />
+             <div>
+             <img src={img} alt="" />
+             </div>
+          
           <div className="layer"></div>
          </div>
          
@@ -29,6 +38,7 @@ const ProductCard = ({product}) => {
          <div>
              <h6 className="price">${price}</h6>
          </div>
+        
          </div>
          
         </div>

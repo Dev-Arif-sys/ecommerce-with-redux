@@ -20,7 +20,7 @@ const Home = () => {
             <Products></Products>
             <hr className='my-4'/>
             <OfferBanner></OfferBanner>
-            <button  >signInWithGoogle</button>
+           
             <ProductCategory></ProductCategory>
             
         </div>

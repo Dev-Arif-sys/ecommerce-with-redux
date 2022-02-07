@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Signin.css'
 import { useForm } from "react-hook-form";
-import { signInWithGoogle,signInGithub } from '../../Redux/Actions/AuthAction';
+import { signInWithGoogle,signInGithub,createUserWithEmailPass,signInWithEmailPass } from '../../Redux/Actions/AuthAction';
 import { useDispatch } from 'react-redux';
 
 const Signin = () => {
@@ -9,7 +9,9 @@ const Signin = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const dispatch=useDispatch()
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+     IsRegister?dispatch(createUserWithEmailPass(data.name,data.email,data.password)) : dispatch(signInWithEmailPass(data.email,data.password))
+    };
 
 
     console.log(IsRegister)
@@ -43,7 +45,10 @@ const Signin = () => {
  
                   <input className='submit-btn' type="submit"  />
 
-                  <p className='mt-5 createAccBtn'  onClick={()=>{SetRegister(!IsRegister)}}>New User? Create account</p>
+                  <p className='mt-5 createAccBtn'  onClick={()=>{SetRegister(!IsRegister)}}> {
+                      IsRegister? <span>Old  User? Log in</span> : <span>New User? Create account</span> 
+                  }
+                      </p>
     </form>
 
 
