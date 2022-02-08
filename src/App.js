@@ -12,6 +12,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import ReviewProduct from './pages/ReviewProduct/ReviewProduct';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Cart from './pages/Cart/Cart';
+import Billing from './pages/Billing/Billing';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/signin' element={<Signin></Signin>}></Route>
       <Route path='/cart' element={<Cart></Cart>}></Route>
+      <Route path='/billing' element={<Billing></Billing>}></Route>
       <Route path='/products/:id' element={<PrivateRoute/>}>
         <Route path='/products/:id' element={<ReviewProduct></ReviewProduct>}  />
       </Route>

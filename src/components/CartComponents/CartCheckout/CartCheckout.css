@@ -1,12 +1,13 @@
 
 .cart-left{
     width: 70%;
+    padding-right: 10px;
     
 }
 
 .cart-right{
     width: 30%;
-    background-color: brown;
+    border-left: 1px solid burlywood;
 }
 
 .cart-product{
@@ -25,6 +26,8 @@
     text-align: right;
 }
 
+
+
 @media only screen and (max-width:768px) {
      
 .cart-left{
@@ -34,7 +37,7 @@
 
 .cart-right{
     width: 100%;
-    background-color: brown;
+    border: none;
 }
 
 .cart-product{

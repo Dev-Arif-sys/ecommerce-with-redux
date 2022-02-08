@@ -1,10 +1,10 @@
 import React from 'react';
 import './CartHeader.css'
 
-const CartHeader = () => {
+const CartHeader = ({text}) => {
     return (
         <div className='cart-header'>
-            <h1>Your Cart</h1>
+            <h1>{text}</h1>
         </div>
     );
 };

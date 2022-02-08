@@ -1,0 +1,8 @@
+.cart-total{
+    margin-top: 30px;
+    border: 1px solid bisque;
+    padding: 20px;
+}
+.cart-total p{
+    font-weight: bold;
+}

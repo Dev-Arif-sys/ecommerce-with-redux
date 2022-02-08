@@ -44,7 +44,7 @@ const Products = () => {
       {
           loading ? < Loading></Loading> : error ? <h6 className='text-center'>{error}</h6> :<div className='products-container mt-2'>
           {
-              displayProduct.map(product=><ProductCard key={product.key} product={product}></ProductCard>)
+              displayProduct?.map(product=><ProductCard key={product.key} product={product}></ProductCard>)
           }
             </div>
       }
