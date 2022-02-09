@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Button, FormControl, InputGroup } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CartTotal from '../CartComponents/CartTotal/CartTotal';
 import BillingInfo from './BillingInfo/BillingInfo';
+import { resetCart } from '../../Redux/Actions/CartAction';
 
 const BillingComponet = () => {
     const cartItem = useSelector(state => state.cart.productCart)
     const [orderInfo,SetOrderInfo]=useState({})
+    const dispatch=useDispatch()
     const cartProduct=cartItem.map(item=>{
             return{
                 id:item._id,
@@ -15,34 +17,45 @@ const BillingComponet = () => {
                 quantity: item.quantity,
                 price:item.price,
                 key:item.key,
-                status:'pending',
+                
             }
     })
+  
 
     console.log(cartProduct)
-    
+    console.log(orderInfo)
   
     const handlePlaceOrder=()=>{
-        const orderData={
-            ...orderInfo,
-            products:cartProduct,        
-        }
-
-        fetch('http://localhost:5000/orders',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json',
-
-            },
-            body:JSON.stringify(orderData)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data?.insertedId){
-                alert('order placed Successfully')
-                // window.location.reload()
+        if(orderInfo['name']==null && orderInfo['email']==undefined){
+             alert('Please add your information')
+        }else{
+           
+            const orderData={
+                ...orderInfo,
+                products:cartProduct, 
+                status:'pending'       
             }
-        })
+
+            fetch('http://localhost:5000/orders',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json',
+    
+                },
+                body:JSON.stringify(orderData)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data?.insertedId){
+                    alert('order placed Successfully')
+                     dispatch(resetCart())
+                     window.location.reload()
+                }
+            })
+        }
+        
+
+       
     }
     return (
         <div className='d-md-flex mt-3'>

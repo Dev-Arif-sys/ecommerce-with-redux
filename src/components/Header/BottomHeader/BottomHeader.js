@@ -1,8 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAdmin } from '../../../Redux/Actions/AdminAction';
+import { isAdmin } from '../../../Redux/Actions/AuthAction';
+import SignModal from '../../SigninModal/SignModal';
 import './BottomHeader.css'
 
+
 const BottomHeader = () => {
+    const navigate=useNavigate()
+    const userInfo=useSelector(state=>state.user.userInfo)
+    const [modalShow, setModalShow] = React.useState(false);
+  const adminInfo=useSelector(state=>state.admin)
+  const dispatch=useDispatch()
+ 
+    useEffect(()=>{
+      dispatch(getAdmin(userInfo.email))
+    },[userInfo])
+
+    const {admin}=adminInfo
+    console.log(admin)
+    const clickYourOrder=()=>{
+        if(! userInfo?.email){
+            setModalShow(true)
+       }else{
+           navigate(`/order`)
+       }
+
+     
+    
+    }
+
+    const clickDashboard=()=>{
+        navigate('/dashboard')
+    }
     return (
         <nav className='bottom-nav '>
             <div className='d-flex justify-content-between bottom-nav-container align-items-center '>
@@ -29,10 +60,17 @@ const BottomHeader = () => {
                 </ul>
                 </div>
                 <div className='d-flex deals'>
-                    <p className='me-3'>Track Order</p>
+                    {
+                     admin.admin ? <p className='me-3' onClick={clickDashboard} style={{cursor:'pointer'}}>Dashboard</p> :  <p className='me-3' style={{cursor:'pointer'}} onClick={clickYourOrder}>Your Order</p>
+                    }
+                   
                     <p>Daily Deals</p>
                 </div>
             </div>
+                
+          <SignModal show={modalShow}
+                    onHide={() => setModalShow(false)}
+                 ></SignModal>
         </nav>
     );
 };

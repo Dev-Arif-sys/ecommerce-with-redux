@@ -4,7 +4,7 @@ const initialState={
     userInfo:{},
     error:''
 }
-const AuthReducer=(state=initialState,action)=>{
+export const AuthReducer=(state=initialState,action)=>{
     switch(action.type){
         case actionTypes.LOGIN_REQUEST:return{
             ...state,

@@ -13,7 +13,12 @@ const CartCheckout = () => {
     const navigate=useNavigate()
  
     const clickCheckout=()=>{
-         navigate('/billing')
+        if(cartItem.length>0){
+            navigate('/billing')
+        }else{
+            alert('You have no product in the cart')
+        }
+         
     }
   
 

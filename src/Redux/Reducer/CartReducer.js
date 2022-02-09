@@ -30,6 +30,13 @@ const InitialCart= localStorage.getItem('cart')!=='undefined' ? JSON.parse(local
             productCart:restItem
         }
       }
+
+      case actionTypes.RESET_CART:{
+          return{
+              ...state,
+              productCart:[]
+          }
+      }
       
       default: return state
     }

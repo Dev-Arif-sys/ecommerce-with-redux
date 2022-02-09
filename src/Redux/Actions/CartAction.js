@@ -26,3 +26,11 @@ export const removeFromCart=(id)=>(dispatch,getState)=>{
 
     localStorage.setItem('cart',JSON.stringify(getState().cart.productCart))
 }
+
+export const resetCart=()=>(dispatch,getState)=>{
+    dispatch({
+        type:actionTypes.RESET_CART
+    })
+
+    localStorage.setItem('cart',JSON.stringify(getState().cart.productCart))
+}

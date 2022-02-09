@@ -11,12 +11,16 @@ import { signInWithGoogle } from '../../Redux/Actions/AuthAction';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import SignModal from '../../components/SigninModal/SignModal';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   
    
     
     return (
+        <div>
+            <Header></Header>
         <div className='home'>
             <Hero></Hero>
             <Products></Products>
@@ -25,6 +29,8 @@ const Home = () => {
            
             <ProductCategory></ProductCategory>
           
+        </div>
+        <Footer></Footer>
         </div>
     );
 };

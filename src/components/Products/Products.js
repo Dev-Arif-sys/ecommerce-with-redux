@@ -15,7 +15,7 @@ const Products = () => {
     },[])
 
     const {products,loading,error}=productData
-    const [displayProduct,setDisplayProduct]=useState([])
+    const [displayProduct,setDisplayProduct]=useState(products?.slice(0,8))
      useEffect(()=>{
          setDisplayProduct(!loading && products?.slice(0,8))
      },[products])

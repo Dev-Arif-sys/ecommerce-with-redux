@@ -47,8 +47,11 @@ const auth = getAuth()
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
 
-            const user = result.user;
-       
+            let user = result.user;
+           saveUser(user.displayName,user.email,"PUT")
+           
+           
+           
             dispatch(signInSuccess(user))
             
         }).catch((error) => {
@@ -62,7 +65,7 @@ export const signInGithub=()=>(dispatch)=>{
     signInWithPopup(auth, githubProvider)
   .then((result) => {
     const user=result.user
-    
+    saveUser(user.displayName,user.email,"PUT")
       signInSuccess(user)
     // ...
   }).catch((error) => {
@@ -76,6 +79,7 @@ createUserWithEmailAndPassword(auth, email, pass)
   .then((userCredential) => {
     
     let  user = userCredential.user;
+    saveUser(name,email,"POST")
     user= {
       ...user,
       displayName:name
@@ -131,4 +135,28 @@ export const userState=()=>dispatch=>{
           // ...
         }
       });
+}
+
+let saveUser=(name,email,method)=>{
+  const user={name,email}
+  fetch(`http://localhost:5000/saveuser`,{
+    method:method,
+    headers:{
+        'content-type':'application/json'
+    },
+    body:JSON.stringify(user)
+
+})
+}
+
+ export let isAdmin=(email)=>{
+   let admin;
+  fetch(`http://localhost:5000/users/${email}`)
+  .then(res=>res.json())
+  .then(data=>{
+   admin = data?.admin
+  })
+
+
+  return admin
 }
