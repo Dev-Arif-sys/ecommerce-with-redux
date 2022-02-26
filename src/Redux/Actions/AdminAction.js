@@ -4,7 +4,7 @@ import *as actionTypes from '../ActionTypes.js/AdminActionTypes'
 export const getAdmin=(email)=>async (dispatch)=>{
     try{
         dispatch({type:actionTypes.GET_ADMIN_REQUEST})
-        const {data}= await axios(`http://localhost:5000/users/${email}`)
+        const {data}= await axios(`https://boiling-brushlands-87279.herokuapp.com/users/${email}`)
         
            console.log(data)
         dispatch({

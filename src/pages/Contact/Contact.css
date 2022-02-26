@@ -1,0 +1,78 @@
+.contact{
+    max-width: 1232px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-heading{
+    background-color: #ecde0f;
+    height: 20vh;
+}
+
+.contactCard{
+    background-color: whitesmoke;
+    width:90%;
+    max-width:250px ;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+
+}
+.contactCard h5{
+    margin-top: 8px;
+}
+.location{
+    border-bottom: 3px solid yellowgreen;
+}
+.location .contact-icon{
+    background-color: yellowgreen;
+}
+.number{
+    border-bottom: 3px solid indianred;
+}
+.number .contact-icon{
+    background-color: indianred;
+}
+.email{
+    border-bottom: 3px solid blueviolet;
+}
+.email .contact-icon{
+    background-color: blueviolet;
+}
+
+.contact-icon{
+    position: absolute;
+    top: -25px;
+    right: 40%;
+    left: 40%;
+    padding: 10px;
+   
+    font-size: 1.4;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+}
+.contactValue{
+    margin-top: 30px;
+}
+.contactValue {
+line-height: 4px;
+}
+.contact-messege{
+    background-color: whitesmoke;
+    padding: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.5);
+}
+
+@media only screen and (max-width:768px) {
+    .contact-icon{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .contact{
+        width: 100%;
+    }
+}

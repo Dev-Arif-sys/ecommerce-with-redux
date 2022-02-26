@@ -16,7 +16,7 @@ const AddProduct = () => {
     const onSubmit = data => {
         data['key']=productData.length;
         console.log(data)
-        fetch('http://localhost:5000/products',{
+        fetch('https://boiling-brushlands-87279.herokuapp.com/products',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -27,7 +27,7 @@ const AddProduct = () => {
              console.log(data)
              if(data?.insertedId){
                  alert('prouct added successfully')
-                 reset()
+                 window.location.reload()
              }
          })
       };

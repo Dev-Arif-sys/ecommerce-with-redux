@@ -1,0 +1,19 @@
+
+
+.shop-left{
+    width: 25%;
+   
+}
+
+.shop-right{
+    width: 75%;
+    
+}
+@media  only screen and (max-width:768px) {
+    .shop-left{
+        display: none;
+    }
+    .shop-right{
+        width: 100%;
+    }
+}

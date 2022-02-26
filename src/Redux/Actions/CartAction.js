@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as actionTypes from '../ActionTypes.js/CartActionType'
 
 export const addToCart=(id,quantity)=> async(dispatch,getState)=>{
-    const {data}=await axios(`http://localhost:5000/products/${id}`)
+    const {data}=await axios(`https://boiling-brushlands-87279.herokuapp.com/products/${id}`)
     dispatch({
         type: actionTypes.ADD_TO_CART,
         payload:{

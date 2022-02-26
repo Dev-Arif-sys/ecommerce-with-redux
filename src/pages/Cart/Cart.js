@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CartCheckout from '../../components/CartComponents/CartCheckout/CartCheckout';
 import CartHeader from '../../components/CartComponents/CartHeader/CartHeader';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import getProduct from '../../Redux/Actions/ProductAction';
 import './Cart.css'
@@ -15,6 +17,8 @@ const Cart = () => {
      console.log(products)
    
     return (
+        <div>
+        <Header></Header>
         <div className='cart'>
             <CartHeader text="Your Cart"></CartHeader>
             <CartCheckout ></CartCheckout>
@@ -22,6 +26,8 @@ const Cart = () => {
                 <h3 className='section-title mb-4'>Featured for you</h3>
             <ProductSlider  products={products.slice(0,20)}></ProductSlider>
             </div>
+        </div>
+        <Footer></Footer>
         </div>
     );
 };

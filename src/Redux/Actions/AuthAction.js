@@ -139,7 +139,7 @@ export const userState=()=>dispatch=>{
 
 let saveUser=(name,email,method)=>{
   const user={name,email}
-  fetch(`http://localhost:5000/saveuser`,{
+  fetch(`https://boiling-brushlands-87279.herokuapp.com/saveuser`,{
     method:method,
     headers:{
         'content-type':'application/json'
@@ -151,7 +151,7 @@ let saveUser=(name,email,method)=>{
 
  export let isAdmin=(email)=>{
    let admin;
-  fetch(`http://localhost:5000/users/${email}`)
+  fetch(`https://boiling-brushlands-87279.herokuapp.com/users/${email}`)
   .then(res=>res.json())
   .then(data=>{
    admin = data?.admin

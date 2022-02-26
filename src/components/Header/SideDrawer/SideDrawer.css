@@ -9,6 +9,9 @@
     transform: translateX(-100%);
     transition: .4s transform ease-out;
 }
+.drawer-link-list{
+    list-style: none;
+}
 
 .activeDrawer{
     transform: translateX(0%);

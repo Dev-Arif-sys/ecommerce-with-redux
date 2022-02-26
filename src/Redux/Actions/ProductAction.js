@@ -5,7 +5,7 @@ import * as productAction from '../ActionTypes.js/ProductActionTypes'
 const getProduct=()=>async (dispatch)=>{
     try{
         dispatch({type:productAction.GET_PRODUCT_REQUEST})
-        const {data}= await axios('http://localhost:5000/products')
+        const {data}= await axios('https://boiling-brushlands-87279.herokuapp.com/products')
 
         dispatch({
             type:productAction.GET_PRODUCT_SUCCESS,

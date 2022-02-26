@@ -68,6 +68,9 @@
   .cart{
     position: relative;
   }
+  .userNameInHead{
+    display: none;
+  }
 
   .cartNo{
     position: absolute;
@@ -85,6 +88,12 @@
   @media only  screen and (max-width:900px) {
       .search{
        width: 400px;
+      }
+      .signIn{
+        display: none;
+      }
+      .userNameInHead{
+        display: inline-block;
       }
   }
 

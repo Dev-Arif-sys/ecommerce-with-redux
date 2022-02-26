@@ -19,7 +19,7 @@ const OrderComponent = () => {
     },[])
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${email}`)
+        fetch(`https://boiling-brushlands-87279.herokuapp.com/orders?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
          setOrders(data[0])

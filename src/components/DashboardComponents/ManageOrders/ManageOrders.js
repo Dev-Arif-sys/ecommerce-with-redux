@@ -13,7 +13,7 @@ const ManageOrders = () => {
     },[])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/totalorder')
+        fetch('https://boiling-brushlands-87279.herokuapp.com/totalorder')
         .then(res=>res.json())
         .then(data=>{
             setOrders(data)
@@ -23,7 +23,7 @@ const ManageOrders = () => {
 
     const handleShip=(id)=>{
         const shipped={status:'shipped'}
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://boiling-brushlands-87279.herokuapp.com/orders/${id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -40,7 +40,7 @@ const ManageOrders = () => {
 
     const handleDelete=(id)=>{
         if(window.confirm('are you sure to delete')){
-          fetch(`http://localhost:5000/orders/${id}`,{
+          fetch(`https://boiling-brushlands-87279.herokuapp.com/orders/${id}`,{
               method:'DELETE',
             
           })

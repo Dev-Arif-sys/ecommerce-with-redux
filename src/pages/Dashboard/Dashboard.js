@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import ManageOrders from '../../components/DashboardComponents/ManageOrders/ManageOrders';
 import './Dashboard.css'
+import { logOUt } from '../../Redux/Actions/AuthAction';
 
 const Dashboard = () => {
     const [addClass, setAddClass] = useState(false)
+    const dispatch=useDispatch()
 
     const handleToggle = () => {
         setAddClass(!addClass)
@@ -18,7 +22,7 @@ const Dashboard = () => {
                         <h3 className='logo  ms-3 mt-4' >EMARKET</h3>
                         <div className="list-group list-group-flush my-3">
 
-                            {/* users deshaboard */}
+                           
 
 
 
@@ -54,14 +58,14 @@ const Dashboard = () => {
                                     fontWeight: "bold",
                                     color: "red"
                                 }}
-                                    className='navLink' to={`/dashboard/ManageProducts`}>
+                                    className='navLink' to={`/dashboard/manageProducts`}>
                                     <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                         className="fas fa-paperclip me-2"></i>Manage Products</p>
                                 </NavLink> </div>
 
 
                              <div className='ms-3' style={{ cursor: 'pointer' }} >
-                                <p className="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
+                                <p onClick={()=>dispatch(logOUt())} className="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
 
                                     <i className="fas fa-sign-out-alt me-2"></i>Log Out</p>
                             </div>
@@ -81,7 +85,7 @@ const Dashboard = () => {
                                     <h2 className="fs-2 m-0">Dashboard</h2>
                                 </div></Navbar.Brand>
                                 <Nav className="ms-auto">
-                                    <Nav.Link as={Link} className='navItem' to="/home">Home</Nav.Link>
+                                    <Nav.Link as={Link} className='navItem' to="/">Home</Nav.Link>
 
                                     {/* <Nav.Link className='me-5 fw-bold' style={{marginRight:"30px"}} >{user?.displayName}</Nav.Link> */}
                                 </Nav>
@@ -89,11 +93,13 @@ const Dashboard = () => {
                         </Navbar>
 
                           
+                    <div className='m-5'>
+                    <Outlet />
+                    </div>
                        
-                     <h1>hello</h1>
-                     <div>
-                          <Outlet></Outlet>
-                          </div>
+                         
+
+                          
 
 
 

@@ -13,6 +13,8 @@ import { useLocation } from 'react-router-dom';
 import SignModal from '../../components/SigninModal/SignModal';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Services from '../../components/Services/Services';
+import Subscribe from '../../components/Subscribe/Subscribe';
 
 const Home = () => {
   
@@ -28,8 +30,11 @@ const Home = () => {
             <OfferBanner></OfferBanner>
            
             <ProductCategory></ProductCategory>
+            <hr className='my-4'/>
+            <Services></Services>
           
         </div>
+        <Subscribe></Subscribe>
         <Footer></Footer>
         </div>
     );

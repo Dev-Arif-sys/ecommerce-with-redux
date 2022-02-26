@@ -19,7 +19,6 @@ const BottomHeader = () => {
     },[userInfo])
 
     const {admin}=adminInfo
-    console.log(admin)
     const clickYourOrder=()=>{
         if(! userInfo?.email){
             setModalShow(true)
@@ -52,14 +51,12 @@ const BottomHeader = () => {
                 </div>
                 <ul className='menu-list'>
                    <li><Link to='/' className='menu-link'>Home</Link></li>
-                   <li><Link to='/' className='menu-link'>Shop</Link></li>
-                   <li><Link to='/' className='menu-link'>Products</Link></li>
-                   <li><Link to='/' className='menu-link'>Blog</Link></li>
-                   <li><Link to='/' className='menu-link'>Elements</Link></li>
-                   <li><Link to='/' className='menu-link'>Contact</Link></li>
+                   <li><Link to='/shop' className='menu-link'>Shop</Link></li>
+                   <li><Link to='/contact' className='menu-link'>Contact</Link></li>
                 </ul>
                 </div>
                 <div className='d-flex deals'>
+                    <p className='me-2 userName'>{userInfo.displayName}</p>
                     {
                      admin.admin ? <p className='me-3' onClick={clickDashboard} style={{cursor:'pointer'}}>Dashboard</p> :  <p className='me-3' style={{cursor:'pointer'}} onClick={clickYourOrder}>Your Order</p>
                     }

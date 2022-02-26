@@ -1,0 +1,18 @@
+.services{
+    margin: 100px 0;
+}
+.service-icon i{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgb(151, 138, 63);
+}
+
+.service-text{
+    line-height: 10px;
+    margin-left: 10px;
+}
+
+.service-heading{
+    font-size: 1.1rem;
+    font-weight: 700;
+}

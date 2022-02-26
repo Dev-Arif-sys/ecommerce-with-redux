@@ -1,0 +1,38 @@
+
+.shopProduct{
+   display: flex;
+   align-items: center;
+    
+}
+
+.shopProduct-img>img{
+    width: 240px;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.shopProduct-detail{
+    padding: 0 10px;
+}
+.shopProduct-detail-mobile{
+    display: none;
+}
+
+
+@media only screen and (max-width:768px) {
+    .shopProduct{
+        align-items:center;
+    }
+    .shopProduct-detail{
+        display: none;
+    }
+
+    .shopProduct-detail-mobile{
+        display: block;
+    }
+    .shopProduct-img>img{
+        width: 100px;
+        height: 200px;
+    }
+    
+}

@@ -35,11 +35,13 @@ const MidHeader = ({click}) => {
                     </div>
                 </div>
                 <div>
-                <span className='wish header-icon'> <i class="far fa-heart"></i>  </span>
+                <span className='wish header-icon'> <i className="far fa-heart"></i>  </span>
                     <span onClick={handleCartIconClick} className='cart header-icon'> <i class="fas fa-shopping-cart"></i> <span className='cartNo'>{cartItemCount}</span> </span>
 
+                    <p className='userNameInHead ms-2'>{UserData.userInfo?.displayName?.slice(0,10)}</p>
+
                     {
-                        UserData.userInfo?.email ? <span onClick={()=>dispatch(logOUt())} className='ms-3 header-icon'>Sign Out <i class="fas fa-sign-out-alt "></i> </span> :     <span  className='ms-3 header-icon' onClick={() => setModalShow(true)} >Sign in <i class="fas fa-sign-in-alt"></i></span>
+                        UserData.userInfo?.email ? <span onClick={()=>dispatch(logOUt())} className='ms-3 header-icon signIn'>Sign Out <i class="fas fa-sign-out-alt "></i> </span> :     <span  className='ms-3 header-icon signIn' onClick={() => setModalShow(true)} >Sign in <i class="fas fa-sign-in-alt"></i></span>
                     }
                   
                    <SignModal show={modalShow}
