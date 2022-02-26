@@ -31,13 +31,13 @@
 }
 .card__footer input, .subscribe-btn{
     padding: 10px 25px;
-    width: 80%;
+  
     border-radius: 15px;
     border: none;
   
 }
 .card__footer input{
-    width: 130%;
+    width: 100%;
     max-width: 400px;
 }
 .card__footer .subscribe-btn{

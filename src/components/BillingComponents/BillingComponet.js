@@ -60,7 +60,7 @@ const BillingComponet = () => {
     return (
         <div className='d-md-flex mt-3'>
         <div className='cart-left'>
-           <h6>Billing Information</h6>
+           <h6>Billing Information <span className='text-warning'>(Please Update the form Before Order)</span></h6>
 
            <BillingInfo SetOrderInfo={SetOrderInfo}></BillingInfo>
             

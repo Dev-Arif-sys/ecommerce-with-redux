@@ -5,12 +5,14 @@ import CartHeader from '../../components/CartComponents/CartHeader/CartHeader';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import ProductSlider from '../../components/ProductSlider/ProductSlider';
+import SignModal from '../../components/SigninModal/SignModal';
 import getProduct from '../../Redux/Actions/ProductAction';
 import './Cart.css'
 
 const Cart = () => {
  const products=useSelector(state=>state.product.products)
  const dispatch=useDispatch()
+ const [modalShow, setModalShow] = React.useState(true);
     useEffect(()=>{
         dispatch(getProduct())
      },[])
@@ -28,6 +30,9 @@ const Cart = () => {
             </div>
         </div>
         <Footer></Footer>
+        <SignModal show={modalShow}
+                    onHide={() => setModalShow(false)}
+                 ></SignModal>
         </div>
     );
 };

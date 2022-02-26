@@ -1,7 +1,7 @@
 import * as actionTypes from '../ActionTypes.js/CartActionType'
 
 
-const InitialCart= localStorage.getItem('cart')!=='undefined' ? JSON.parse(localStorage.getItem('cart') ):[]
+const InitialCart= localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') ):[]
 
 
  export const CartReducer=(state={productCart:InitialCart},action)=>{

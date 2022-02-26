@@ -71,7 +71,7 @@ const BillingInfo = ({SetOrderInfo}) => {
   </Row>
 
   
-  <Button variant="primary" type="submit">
+  <Button variant="primary" className='mb-4' type="submit">
     Update
   </Button>
 

@@ -13,11 +13,13 @@ const MidHeader = ({click}) => {
 
     console.log(UserData)
     const [modalShow, setModalShow] = React.useState(false);
-    console.log(cartItem)
+    
     const cartItemCount=cartItem.reduce((quantity,item)=> cartItem.length>0? quantity+Number(item.quantity):0,0)
     console.log(cartItemCount)
     const handleCartIconClick=()=>{
+        
         navigate('/cart')
+       
     }
     
     return (
