@@ -11,14 +11,14 @@ const Footer = () => {
                 <div className=" row justify-content-center">
                    <div className="col-md-3">
                        <div>
-                           <h3 className="fs-3 fw-bold  "><span className="logo-part">RACER</span>EDGE</h3>
-                           <p >the most wanted bike that you want to have is in our garrage . take it and get a ride </p>
+                           <h3 className="fs-3 fw-bold  ">EMARKET</h3>
+                           <p >the most wanted ecommerce that you want to have  in your area. get a chance. </p>
                        </div>
                        <div className="social-link">
             
                        </div>
                        <div>
-                           <small >copyright &copy;RACEREDGE</small>
+                           <small >copyright &copy;Emarket</small>
                        </div>
                    </div>
                    {/* our presence */}
@@ -31,16 +31,16 @@ const Footer = () => {
             
                            </li>
                            <li>
-                               <a href="">Join Biker's Club </a>
+                               <a href="">Join Our Club </a>
                            </li>
                            <li>
-                               <a href="">Bike Parts</a>
+                               <a href=""> Return Policy</a>
                            </li>
                            <li>
                                <a href="">Work with us</a>
                            </li>
                            <li>
-                               <a href="">Meet Bikers</a>
+                               <a href="">Meet The Team</a>
                            </li>
                        </ul>
             

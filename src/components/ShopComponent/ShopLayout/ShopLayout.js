@@ -24,7 +24,7 @@ const ShopLayout = () => {
        if(category=='all'){
            setDisplayProduct([...products])
        }else{
-        fetch(`http://localhost:5000/productbycategory?category=${category}`)
+        fetch(`https://boiling-brushlands-87279.herokuapp.com/productbycategory?category=${category}`)
         .then(res=>res.json())
         .then(data=>{
             setDisplayProduct(data)

@@ -38,7 +38,7 @@ const BottomHeader = () => {
             <div className='d-flex justify-content-between bottom-nav-container align-items-center '>
                 <div className='d-flex align-items-center'>
                 <div className='browse-category'>
-              <div className='d-flex justify-content-between align-items-center'><p>Browse Categories  <i class="fas fa-chevron-down arrow-icon"></i></p></div>
+              <div className='d-flex justify-content-between align-items-center'><p>Browse Categories  <i className="fas fa-chevron-down arrow-icon"></i></p></div>
               <div className='category'>
                   <p>technology</p>
                   <p>technology</p>

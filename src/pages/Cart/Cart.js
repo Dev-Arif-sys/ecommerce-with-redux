@@ -11,12 +11,16 @@ import './Cart.css'
 
 const Cart = () => {
  const products=useSelector(state=>state.product.products)
+ const userInfo=useSelector(state=>state.user.userInfo)
  const dispatch=useDispatch()
- const [modalShow, setModalShow] = React.useState(true);
+ const [modalShow, setModalShow] = React.useState(userInfo.email ? false : true);
+
     useEffect(()=>{
         dispatch(getProduct())
      },[])
-     console.log(products)
+
+    
+     
    
     return (
         <div>

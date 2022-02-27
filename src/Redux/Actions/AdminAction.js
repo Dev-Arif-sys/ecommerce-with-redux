@@ -6,7 +6,7 @@ export const getAdmin=(email)=>async (dispatch)=>{
         dispatch({type:actionTypes.GET_ADMIN_REQUEST})
         const {data}= await axios(`https://boiling-brushlands-87279.herokuapp.com/users/${email}`)
         
-           console.log(data)
+           
         dispatch({
             type:actionTypes.GET_ADMIN_SUCCESS,
             payload:data

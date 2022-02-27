@@ -25,7 +25,7 @@ const ProductCard = ({product}) => {
         
     }
     return (
-        <div>
+        <div key={product.key}>
         <div  className="myCard">
          <div className="card-img">
              <div onClick={()=> handleCardClick(_id)}>
@@ -38,8 +38,8 @@ const ProductCard = ({product}) => {
          <div className="card-info">
           <div className="card-icon">
               <div className=" d-flex justify-content-between mx-2">
-              <p onClick={()=>dispatch(addToCart(_id,1))} ><i class="fas fa-cart-plus"></i></p>
-                       <p><i class="far fa-heart"></i></p>
+              <p onClick={()=>dispatch(addToCart(_id,1))} ><i className="fas fa-cart-plus"></i></p>
+                       <p><i className="far fa-heart"></i></p>
               </div>
           </div>
          <div >

@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
     var { name, price, category, stock, img, _id, seller, star, feature } = product
 
-    console.log(productData)
+    
     useEffect(()=>{
        fetch(`https://boiling-brushlands-87279.herokuapp.com/productbycategory?category=${category}`)
        .then(res=>res.json())
@@ -35,7 +35,7 @@ const ProductDetail = () => {
            setCatogorizedData(data)
        })
     },[category])
-    console.log(quantity)
+   
 
     
     

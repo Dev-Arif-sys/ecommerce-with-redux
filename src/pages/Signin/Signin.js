@@ -14,7 +14,7 @@ const Signin = () => {
     };
 
 
-    console.log(IsRegister)
+    
 
   
    
@@ -27,8 +27,8 @@ const Signin = () => {
 
                     <div className='mt-3'>
 
-                    <i onClick={()=>dispatch(signInWithGoogle())} class="fab fa-google google-icon"></i>
-                    <i onClick={()=>dispatch(signInGithub())} class="fab fa-github github-icon"></i>
+                    <i onClick={()=>dispatch(signInWithGoogle())} className="fab fa-google google-icon"></i>
+                    <i onClick={()=>dispatch(signInGithub())} className="fab fa-github github-icon"></i>
                     </div>
 
                     <form className='mt-5' onSubmit={handleSubmit(onSubmit)}>

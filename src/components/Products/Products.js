@@ -20,7 +20,7 @@ const Products = () => {
      useEffect(()=>{
          setDisplayProduct( productscut)
      },[products])
-    console.log(displayProduct)
+    
      const [category,setCategory]=useState('')
     const handleProductNav=(category)=>{
         setCategory(category)

@@ -15,7 +15,7 @@ const Header = () => {
     <SideDrawer showDrawer={showDrawer}></SideDrawer>
     <BackDrop click={()=>setShowDrawer(false)} showBack={showDrawer}></BackDrop>
     {
-        showDrawer &&  <div onClick={()=> setShowDrawer(false)} className='cross-btn'> <i class="fas fa-times"></i> </div>
+        showDrawer &&  <div onClick={()=> setShowDrawer(false)} className='cross-btn'> <i className="fas fa-times"></i> </div>
     }
    
         </div>

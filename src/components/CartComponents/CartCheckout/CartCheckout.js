@@ -36,7 +36,7 @@ const CartCheckout = () => {
                         
                         return (
                             <>
-                                <CartProduct product={product}></CartProduct>
+                                <CartProduct key={product._id} product={product}></CartProduct>
 
                             </>
                         )

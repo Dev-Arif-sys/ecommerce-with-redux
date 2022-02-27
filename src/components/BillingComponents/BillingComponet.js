@@ -22,8 +22,7 @@ const BillingComponet = () => {
     })
   
 
-    console.log(cartProduct)
-    console.log(orderInfo)
+
   
     const handlePlaceOrder=()=>{
         if(orderInfo['name']==null && orderInfo['email']==undefined){
