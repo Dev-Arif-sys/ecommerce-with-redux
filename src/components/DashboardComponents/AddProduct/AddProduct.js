@@ -26,7 +26,7 @@ const AddProduct = () => {
          .then(data=>{
              console.log(data)
              if(data?.insertedId){
-                 alert('prouct added successfully')
+                 alert('product added successfully')
                  window.location.reload()
              }
          })

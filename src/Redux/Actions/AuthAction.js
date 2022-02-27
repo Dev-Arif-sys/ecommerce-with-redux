@@ -139,6 +139,7 @@ export const userState=()=>dispatch=>{
 
 let saveUser=(name,email,method)=>{
   const user={name,email}
+  console.log(user)
   fetch(`https://boiling-brushlands-87279.herokuapp.com/saveuser`,{
     method:method,
     headers:{

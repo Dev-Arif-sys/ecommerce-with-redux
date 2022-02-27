@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+#  Emarket -An Ecommerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+to visit the live site  [click here](https://emarket-u.netlify.app/).
+ 
+ Technology used: React js, Bootstrap,Redux, React-router-hook-form, Firebase login, Nodejs, express js, MongoDb.
+## feature description 
 
-## Available Scripts
+ * This is an ecommerce site . it has multiple  types of product section
+Home page consists of Bigger Header, Hero with Slider, Products showing,Product with category , Ad of Product  Subscription and a footer section.
 
-In the project directory, you can run:
+ * The second header includes home, shop , contact and your order or dashboard link.
 
-### `npm start`
+* Products section in the home page has the types of button to filter top rated and best seller products.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ * Product cards have a product's picture and details with two buttons for add to cart and add to favorite which is not functionable.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Products with a category section  have buttons to filter the particular types of product.
 
-### `npm test`
+* After clicking on a particular product it will take you to the details of the product if you are logged in. but if you are not , a pop-up will appear for logging in.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* The includes firebase log-in system for google, github and email-password
+ The product details page has details about the product and here you can increase the product quantity and add to the cart . it also includes a slider in the below with the same types of products.
+* In the header , there is a cart sign which takes you to the cart page. It includes all the cart’s products and the price of all the products. For retention of the cart product , localStorage is used here. Here you can change the quantity of cart products and the price will change with the quantity.
 
-### `npm run build`
+* In the cart page, Proceed to check out button takes you to the billing page but the billing is not added yet. If you provide the information and order . the order will be listed in the database.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* You can see your order in the order page .
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* For admin here we added a dashboard which includes manage order, add a product, make admin  and manage all products sections.
+* For protecting dashboard adminRoute is used.
+* Shop page includes all products . You can filter them according to the category of the product and can add the product to the cart.

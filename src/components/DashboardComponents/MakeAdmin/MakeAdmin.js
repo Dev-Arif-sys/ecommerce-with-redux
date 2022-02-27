@@ -20,6 +20,7 @@ const MakeAdmin = () => {
         .then(data=>{
             if(data.modifiedCount>0){
                setSuccess(true)
+               alert('added as admin')
                reset()
             }
         })
