@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { set } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../../Redux/Actions/CartAction';
 
@@ -8,7 +7,13 @@ const CartProduct = ({product}) => {
     const [quantity,setQuantity]=useState(product.quantity)
 
    
-   
+   const handleInc=()=>{
+    dispatch(addToCart(product._id,product.quantity+1))
+   }
+
+   const handleDec=()=>{
+    dispatch(addToCart(product._id,product.quantity>1 && product.quantity-1))
+   }
 
      
     
@@ -20,9 +25,9 @@ const CartProduct = ({product}) => {
         </div>
         <div className='cart-quantity'>
             <div className="qty-box cart-qty-box">
-                <span onClick={()=>dispatch(addToCart(product._id,product.quantity>1 && product.quantity-1))}  className="dec qty-item" >–</span>
+                <span onClick={handleDec}  className="dec qty-item" >–</span>
                 <span className="qty qty-item"> {product.quantity}</span>
-                <span onClick={()=>dispatch(addToCart(product._id,product.quantity+1))} className="inc qty-item">+</span>
+                <span onClick={handleInc} className="inc qty-item">+</span>
             </div>
         </div>
         <div className='cart-price'>

@@ -1,10 +1,11 @@
 
 import React from 'react';
-import { ButtonGroup,Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import Signin from '../../pages/Signin/Signin';
 
 
 const SignModal = (props) => {
+  
     return (
         <Modal
         {...props}

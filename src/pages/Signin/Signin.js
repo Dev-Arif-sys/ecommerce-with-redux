@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
-import './Signin.css'
+import React, { useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
 import { useForm } from "react-hook-form";
-import { signInWithGoogle,signInGithub,createUserWithEmailPass,signInWithEmailPass } from '../../Redux/Actions/AuthAction';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUserWithEmailPass, signInGithub, signInWithEmailPass, signInWithGoogle } from '../../Redux/Actions/AuthAction';
+import './Signin.css';
 
 const Signin = () => {
     const [IsRegister,SetRegister]=useState(false)
+    const alert=useAlert()
+    const userInfo=useSelector(state=>state.user.userInfo)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const dispatch=useDispatch()
     const onSubmit = data => {
      IsRegister?dispatch(createUserWithEmailPass(data.name,data.email,data.password)) : dispatch(signInWithEmailPass(data.email,data.password))
+    
     };
+
+    useEffect(()=>{
+       if(userInfo.email){
+           alert.success('logged in successfully')
+       }
+    },[userInfo.email])
 
 
     

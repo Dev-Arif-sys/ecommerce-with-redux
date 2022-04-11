@@ -4,6 +4,9 @@
    align-items: center;
     
 }
+.product-name{
+    cursor: pointer;
+}
 
 .shopProduct-img>img{
     width: 240px;

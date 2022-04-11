@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import './MidHeader.css'
-import { Link, useNavigate } from "react-router-dom";
-import SignModal from '../../SigninModal/SignModal';
+import { useNavigate } from "react-router-dom";
 import { logOUt } from '../../../Redux/Actions/AuthAction';
+import SignModal from '../../SigninModal/SignModal';
+import './MidHeader.css';
 
 const MidHeader = ({click}) => {
     const cartItem=useSelector(state=>state.cart.productCart)
     const UserData=useSelector(state=>state.user)
     const dispatch=useDispatch()
     const navigate=useNavigate()
+    const alert=useAlert()
 
+    console.log(UserData)
     
     const [modalShow, setModalShow] = React.useState(false);
+    useEffect(()=>{
+        if(UserData.userInfo.email){
+            setModalShow(false)
+            
+            
+        }
+    },[UserData?.userInfo.email,alert])
+   
     
     const cartItemCount=cartItem.reduce((quantity,item)=> cartItem.length>0? quantity+Number(item.quantity):0,0)
     
@@ -20,6 +31,11 @@ const MidHeader = ({click}) => {
         
         navigate('/cart')
        
+    }
+
+    const handleLogout=()=>{
+        dispatch(logOUt())
+        alert.info('Logged out successfully')
     }
     
     return (
@@ -43,7 +59,7 @@ const MidHeader = ({click}) => {
                     <p className='userNameInHead ms-2'>{UserData.userInfo?.displayName?.slice(0,10)}</p>
 
                     {
-                        UserData.userInfo?.email ? <span onClick={()=>dispatch(logOUt())} className='ms-3 header-icon signIn'>Sign Out <i className="fas fa-sign-out-alt "></i> </span> :     <span  className='ms-3 header-icon signIn' onClick={() => setModalShow(true)} >Sign in <i className="fas fa-sign-in-alt"></i></span>
+                        UserData.userInfo?.email ? <span onClick={handleLogout} className='ms-3 header-icon signIn'>Sign Out <i className="fas fa-sign-out-alt "></i> </span> :     <span  className='ms-3 header-icon signIn' onClick={() => setModalShow(true)} >Sign in <i className="fas fa-sign-in-alt"></i></span>
                     }
                   
                    <SignModal show={modalShow}

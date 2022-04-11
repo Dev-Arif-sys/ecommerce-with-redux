@@ -22,4 +22,5 @@ const getProduct=()=>async (dispatch)=>{
 }
 
 
+
 export default getProduct;

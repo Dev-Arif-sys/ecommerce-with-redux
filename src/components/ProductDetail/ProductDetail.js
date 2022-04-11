@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import ProductSlider from '../ProductSlider/ProductSlider';
-import './ProductDetail.css'
 import { addToCart } from '../../Redux/Actions/CartAction';
+import Loading from '../Loading/Loading';
+import ProductSlider from '../ProductSlider/ProductSlider';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
     const [product, setProduct] = useState({})
     const productData=useSelector(state=> state.product.products)
     const dispatch=useDispatch()
     const [categorizedData,setCatogorizedData]=useState([])
+    const [loading,setLoading]=useState(false)
     const [quantity,setQuantity]=useState(1)
     
     const { id } = useParams()
@@ -17,12 +19,14 @@ const ProductDetail = () => {
  
 
     useEffect(() => {
+        setLoading(true)
         fetch(`https://boiling-brushlands-87279.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
+                setLoading(false)
             })
-    }, [])
+    }, [id])
 
 
     var { name, price, category, stock, img, _id, seller, star, feature } = product
@@ -37,12 +41,16 @@ const ProductDetail = () => {
     },[category])
    
 
-    
+    if(loading){
+        return <Loading></Loading>
+    }
     
 
 
 
     return (
+        <div>
+           
         <div className='product-detail'>
             <div className='d-md-flex'>
                 <div className='product-left'>
@@ -57,9 +65,9 @@ const ProductDetail = () => {
                    
 
                     <div className="qty-box">
-                        <span onClick={()=>{ if(quantity>1){setQuantity(quantity-1 )} }} className="dec qty-item" >–</span>
+                        <span onClick={()=>{ if(quantity>1){setQuantity(prev=>prev-1 )} }} className="dec qty-item" >–</span>
                         <span className="qty qty-item"> {quantity}</span>
-                        <span onClick={()=>setQuantity(quantity+1)} className="inc qty-item">+</span>
+                        <span onClick={()=>setQuantity(prev=>prev+1)} className="inc qty-item">+</span>
                     </div>
 
                     <button onClick={()=>dispatch(addToCart(_id,quantity))} className='gen-btn'>Add To Cart</button>
@@ -74,6 +82,7 @@ const ProductDetail = () => {
             <ProductSlider  products={categorizedData}></ProductSlider>
             </div>
 
+        </div>
         </div>
     );
 };

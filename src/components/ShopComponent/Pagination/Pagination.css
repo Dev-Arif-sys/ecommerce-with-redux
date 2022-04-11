@@ -1,0 +1,9 @@
+.pagination-count{
+    list-style: none;
+    display: flex;
+    margin: 30px;
+    
+}
+.pagination-count *{
+    padding: 10px;
+}

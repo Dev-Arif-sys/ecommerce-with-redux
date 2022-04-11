@@ -1,28 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './pages/Home/Home';
-import Header from './components/Header/Header';
-import Signin from './pages/Signin/Signin';
+import { positions, Provider, transitions } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 import { useDispatch } from 'react-redux';
-import { userState } from './Redux/Actions/AuthAction';
-import Footer from './components/Footer/Footer';
-import ProductDetail from './components/ProductDetail/ProductDetail';
-import ReviewProduct from './pages/ReviewProduct/ReviewProduct';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
-import Cart from './pages/Cart/Cart';
-import Billing from './pages/Billing/Billing';
-import YourOrder from './pages/YourOrder/YourOrder';
-import Dashboard from './pages/Dashboard/Dashboard';
-import ManageOrders from './components/DashboardComponents/ManageOrders/ManageOrders';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AdminRoute from './AdminRoute/AdminRoute';
+import './App.css';
 import AddProduct from './components/DashboardComponents/AddProduct/AddProduct';
 import MakeAdmin from './components/DashboardComponents/MakeAdmin/MakeAdmin';
+import ManageOrders from './components/DashboardComponents/ManageOrders/ManageOrders';
 import ManageProducts from './components/DashboardComponents/ManageProducts/ManageProducts';
-import Shop from './pages/Shop/Shop';
-import AdminRoute from './AdminRoute/AdminRoute';
+import Billing from './pages/Billing/Billing';
+import Cart from './pages/Cart/Cart';
 import Contact from './pages/Contact/Contact';
-
+import Dashboard from './pages/Dashboard/Dashboard';
+import Home from './pages/Home/Home';
+import ReviewProduct from './pages/ReviewProduct/ReviewProduct';
+import Shop from './pages/Shop/Shop';
+import Signin from './pages/Signin/Signin';
+import YourOrder from './pages/YourOrder/YourOrder';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import { userState } from './Redux/Actions/AuthAction';
 
 function App() {
   const dispatch = useDispatch()
@@ -33,7 +30,17 @@ function App() {
 
   }
 
+  const options = {
+    // you can also just use 'bottom center'
+    position: positions.TOP_RIGHT,
+    timeout: 5000,
+    offset: '30px',
+    // you can also just use 'scale'
+    transition: transitions.FADE
+  }
+
   return (
+    <Provider template={AlertTemplate} {...options}>
     <BrowserRouter>
 
       <Routes>
@@ -71,6 +78,7 @@ function App() {
       </Routes>
 
     </BrowserRouter>
+    </Provider>
   );
 }
 

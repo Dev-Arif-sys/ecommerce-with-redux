@@ -1,7 +1,7 @@
 .myCard{
     width: 250px;
     margin: 0 auto;
-    background-color: #f2f0f7;
+    background-color: #fefeff;
    border: .5px solid lightgray;
    border-radius: 10px;
 }
@@ -36,15 +36,35 @@ box-shadow: 0 5px 10px 0 rgba(8, 8, 8, 0.3);
 }
 .name{
     font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    color: rgb(81, 17, 17);
 }
 .price{
     color: #85b90b;
     font-size: 1.2rem;
 }
 .card-icon{
-    position: relative;
-    top: -15px;
+    position: absolute;
+    top: -40px;
+    display: none;
+    width: 95%;
+    transform: scale(0);
+    transition: .5s transform;
+   
     
+}
+.icon-container{
+   
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.myCard:hover .card-icon{
+    display: block;
+    transform: scale(1);
+
 }
 .card-icon .fas{
     transition: .2s transform;
@@ -54,7 +74,7 @@ box-shadow: 0 5px 10px 0 rgba(8, 8, 8, 0.3);
 }
 
 .card-icon p{
-    color: #85b90b;
+    color: #b1f611;
     font-size: 1.4rem;
     cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CartCheckout from '../../components/CartComponents/CartCheckout/CartCheckout';
 import CartHeader from '../../components/CartComponents/CartHeader/CartHeader';
@@ -7,17 +7,22 @@ import Header from '../../components/Header/Header';
 import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import SignModal from '../../components/SigninModal/SignModal';
 import getProduct from '../../Redux/Actions/ProductAction';
-import './Cart.css'
+import './Cart.css';
 
 const Cart = () => {
  const products=useSelector(state=>state.product.products)
  const userInfo=useSelector(state=>state.user.userInfo)
  const dispatch=useDispatch()
  const [modalShow, setModalShow] = React.useState(userInfo.email ? false : true);
+ useEffect(()=>{
+   if(userInfo.email){
+       setModalShow(false)
+   }
+ },[userInfo])
 
     useEffect(()=>{
         dispatch(getProduct())
-     },[])
+     },[dispatch])
 
     
      

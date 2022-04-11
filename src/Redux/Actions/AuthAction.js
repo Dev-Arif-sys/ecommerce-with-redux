@@ -1,7 +1,7 @@
-import AuthenticationINIT from '../../Firebase/firebase.init.js'
-import *as actionTypes from '../ActionTypes.js/AuthActionTypes'
-import { GoogleAuthProvider, signInWithPopup,GithubAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signOut, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
-import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import AuthenticationINIT from '../../Firebase/firebase.init.js';
+import * as actionTypes from '../ActionTypes.js/AuthActionTypes';
+
 
 AuthenticationINIT()
 
